@@ -389,6 +389,11 @@ public final class TinkerGraph implements Graph {
         }
 
         @Override
+        public boolean supportsNullPropertyValues() {
+            return allowNullPropertyValues;
+        }
+
+        @Override
         public Features.VertexPropertyFeatures properties() {
             return vertexPropertyFeatures;
         }
@@ -412,6 +417,11 @@ public final class TinkerGraph implements Graph {
     public class TinkerGraphEdgeFeatures implements Features.EdgeFeatures {
 
         private TinkerGraphEdgeFeatures() {
+        }
+
+        @Override
+        public boolean supportsNullPropertyValues() {
+            return allowNullPropertyValues;
         }
 
         @Override
@@ -450,6 +460,11 @@ public final class TinkerGraph implements Graph {
     public class TinkerGraphVertexPropertyFeatures implements Features.VertexPropertyFeatures {
 
         private TinkerGraphVertexPropertyFeatures() {
+        }
+
+        @Override
+        public boolean supportsNullPropertyValues() {
+            return allowNullPropertyValues;
         }
 
         @Override
