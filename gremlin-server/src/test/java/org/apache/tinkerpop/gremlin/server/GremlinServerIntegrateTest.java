@@ -1196,7 +1196,7 @@ public class GremlinServerIntegrateTest extends AbstractGremlinServerIntegration
 
     @Test
     public void shouldFailOnDeadHost() throws Exception {
-        final Cluster cluster = TestClientFactory.build().create();
+        final Cluster cluster = TestClientFactory.build().maxWaitForConnection(90000).create();
         final Client client = cluster.connect();
 
         // ensure that connection to server is good
